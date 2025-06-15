@@ -3,13 +3,13 @@ import readchar
 import os
 import sys
 
-def clear_screen():
+def clear_screen() -> None:
     """Очищує екран терміналу."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def terminal_menu(options, title="Оберіть опцію:"):
+def terminal_menu(options, title="Оберіть опцію:") -> None|int:
     """
-    Створює інтерактивне термінальне меню.
+    Створює меню.
 
     Args:
         options (list): Список рядків, що представляють пункти меню.
@@ -48,7 +48,7 @@ def terminal_menu(options, title="Оберіть опцію:"):
             sys.exit(0) # Завершуємо програму
 
 
-def menu():
+def menu() -> None:
     menu_options = ["Нова гра", "Завантаження", "Налаштування", "Вихід"]
 
     chosen_option = terminal_menu(menu_options, "МЕНЮ:")
