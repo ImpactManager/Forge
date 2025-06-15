@@ -1,3 +1,2 @@
 def test():
-    # NOTE
     pass
