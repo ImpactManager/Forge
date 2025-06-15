@@ -1,0 +1,14 @@
+# Virtal 
+.venv/  
+
+# Editors 
+.idea/
+.vscode/
+
+#Other
+__pycache__
+output/
+build/
+dist/
+.Temp/
+**.key

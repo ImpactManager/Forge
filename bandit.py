@@ -1,2 +1,2 @@
-print("hello")
-print("I'm here")
+def test():
+    pass
