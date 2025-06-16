@@ -3,6 +3,7 @@ import readchar
 import os
 import sys
 import characters
+import actions
 
 def clear_screen() -> None:
     """Очищує екран терміналу."""
@@ -49,7 +50,7 @@ def terminal_menu(options, title="Оберіть опцію:") -> None|int:
             sys.exit(0) # Завершуємо програму
 
 
-def menu() -> None:
+def menu() -> str:
     menu_options = ["Нова гра", "Завантаження", "Налаштування", "Вихід"]
 
     chosen_option = terminal_menu(menu_options, "МЕНЮ:")
@@ -57,7 +58,16 @@ def menu() -> None:
     if chosen_option == "Вихід":
         print("До побачення!")
     elif chosen_option == "Нова гра":
-        print("Гра починається...")
+
+        # NOTE Тестовий гравець
+        player_name = input("Як тебе звати: ")
+        player = characters.Player(player_name)
+        enemy = characters.Enemy()
+
+        # NOTE Тестова передача в actions
+        actions.turn(player, enemy)
+        
+
     elif chosen_option == "Завантаження":
         print("Завнтаження гри")
     elif chosen_option == "Налаштування":    
