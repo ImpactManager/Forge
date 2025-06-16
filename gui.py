@@ -2,6 +2,7 @@
 import readchar
 import os
 import sys
+from player import Player
 
 def clear_screen() -> None:
     """Очищує екран терміналу."""
