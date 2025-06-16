@@ -1,7 +1,7 @@
 """ Головний файл """
-import menu
+import gui
 
-menu.menu()
+gui.menu()
 
 # """
 # game_state - стан гри. Значення:
