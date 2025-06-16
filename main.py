@@ -3,6 +3,7 @@ import gui
 
 gui.menu()
 
+
 # """
 # game_state - стан гри. Значення:
 # menu - в меню
