@@ -1,14 +1,14 @@
-"Класс гравця"
+"""Класс гравця"""
 import random
 class Player:
-    def __init__(self, name: str, hp: int = 100, attack: int = 5, main_class: str = "warrior") -> None:
+    def __init__(self, name: str, hp: int = 100, attack: int = 25, main_class: str = "Воїн") -> None:
         
         """Ініціалізує гравця.
         Args:
             name (str): Ім'я гравця.
             hp (int): Здоров'я гравця. За замовчуванням 100.
-            attack (int): Сила атаки гравця. За замовчуванням 5.
-            main_class (str): Основний клас гравця. За замовчуванням "warrior".
+            attack (int): Сила атаки гравця. За замовчуванням 25.
+            main_class (str): Основний клас гравця. За замовчуванням "Воїн".
         """
         self.name = name
         self.hp = hp
@@ -19,29 +19,37 @@ class Player:
     def __str__(self) -> str:
         """Повертає представлення гравця."""
         return f"Гравець: {self.name}, Классу: {self.main_class}"
+    
+    
 
-"Класс ворога"
-class Enemy(Player):
-    def __init__(self, hp: int = 100, attack: int = 5, type: str = "goblin") -> None:
+"""Класс ворога"""
+class Enemy:
+    def __init__(self, hp: int = 100, attack: int = 25, type: str = "Гоблін") -> None:
         
         """
             Ініціалізує ворога.
             Args:
                 hp (int): Здоров'я ворога. За замовчуванням 100.
-                attack (int): Сила атаки ворога. За замовчуванням 5.
-                type (str): Основний клас ворога. За замовчуванням "goblin".
+                attack (int): Сила атаки ворога. За замовчуванням 25.
+                type (str): Основний клас ворога. За замовчуванням "Гоблін".
         """
-        self.name = "ворог"
+        
+        """Імя Буде використовуватись для спеціальних ворогів, 
+        наприклад боссів. 
+        Звичайни моби імя не мають"""
+        self.name = ""
         self.hp = hp
         self.attack = attack
         self.type = type
         self.enemy_list = ["Гоблін", "Вовк", "Змія"]
         pass
     
-    def random(self):
+    """Повертає рандомного ворога, з рандомною атакою"""
+    def random_enemy(self):
          self.type = random.choice(self.enemy_list)
-         self.attack = random.randint(1,5)
+         self.attack = random.randint(10,25)
          return self
+     
     def __str__(self) -> str:
         """Повертає представлення ворогу."""
         return f"Тип: {self.type}, Аттака: {self.attack} HP: {self.hp}"
