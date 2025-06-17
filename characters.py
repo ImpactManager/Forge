@@ -37,20 +37,26 @@ class Enemy:
         """Імя Буде використовуватись для спеціальних ворогів, 
         наприклад боссів. 
         Звичайни моби імя не мають"""
+        
         self.name = ""
         self.hp = hp
         self.attack = attack
         self.type = type
         self.enemy_list = ["Гоблін", "Вовк", "Змія"]
+        
+        #NOTE: планую перетворити на метод say()
+        self.enemy_replics = ["Зараз ти помреш!", "Ррр...", "Не твій сьогодні день.."]
+        self.say = ""
         pass
     
-    """Повертає рандомного ворога, з рандомною атакою"""
+    """Повертає рандомного ворога, з рандомною атакою, рандомною реплікою"""
     def random_enemy(self):
          self.type = random.choice(self.enemy_list)
          self.attack = random.randint(10,25)
+         self.say = random.choice(self.enemy_replics)
          return self
      
     def __str__(self) -> str:
         """Повертає представлення ворогу."""
-        return f"Тип: {self.type}, Аттака: {self.attack} HP: {self.hp}"
+        return f"{self.type}\nHP: {self.hp}\nАттака: {self.attack}"
     
