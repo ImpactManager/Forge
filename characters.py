@@ -44,13 +44,13 @@ class Enemy:
         self.type = type
         self.enemy_list = ["Гоблін", "Вовк", "Змія"]
         self.enemy_replics = ["Зараз ти помреш!", "Ррр...", "Не твій сьогодні день.."]
-        #не працює
+        #ворог каже рандомну репліку зі списку
         self.say = self.say_something()
         pass
     
     def say_something(self):
         self.say = random.choice(self.enemy_replics)
-        return self
+        return self.say
     
     """Повертає рандомного ворога, з рандомною атакою"""
     def random_enemy(self):
