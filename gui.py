@@ -1,6 +1,7 @@
 """ Відмалювання меню """
 import readchar
 import os
+from random import choice
 
 def clear_screen() -> None:
     """Очищує екран терміналу."""
@@ -60,18 +61,24 @@ def menu() -> str:
     elif chosen_option == "Налаштування":    
         print("Переходимо до налаштувань...")
 
-def scene(player_name: str, enemy_name: str) -> str:
+def scene(player_obj, enemy_obj, target) -> str:
     """ Відмальовуємо сцену гри. Приймаємо: 
         player_name як ім'я гравця
         enemy_name як ім'я ворога
 
         Відмальовуємо пункти керування
     """
-
-    scene_discription = f"Ну шо {player_name}, каже {enemy_name}, настав і твій час. Діставай зброю пес."
-
     scene_actions = ["Вдарити", "Побігти"]
-    chosen_option = terminal_menu(scene_actions, f"Сцена перша. {scene_discription}")
+    enemy_action_choice = choice(scene_actions)
+
+    if target == player_obj:
+        scene_discription = f"Ну шо {player_obj.name}, каже {enemy_obj.type}, настав і твій час. Отримай."
+        chosen_option = terminal_menu(["Ану давай!"], f"{scene_discription}")
+        chosen_option = enemy_action_choice
+        
+    elif target == enemy_obj:
+        scene_discription = f"Йди сюди вонючий {enemy_obj.type}."
+        chosen_option = terminal_menu(scene_actions, f"{scene_discription}")
 
     if chosen_option == "Вдарити":
         return chosen_option
