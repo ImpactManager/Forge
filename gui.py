@@ -72,12 +72,20 @@ def scene(player_obj, enemy_obj, target) -> str:
     enemy_action_choice = choice(scene_actions)
 
     if target == player_obj:
-        scene_discription = f"Ну шо {player_obj.name}, каже {enemy_obj.type}, настав і твій час. Отримай."
+        turn = f"Хід: ворога.\n"
+        hp = f"\nВаше HP: {player_obj.hp}\n"
+        scene_discription = f"Ну шо {player_obj.name}, каже {enemy_obj.type}, настав і твій час. Отримай." 
+        enemy_display = f"Перед вами: \n{enemy_obj}"
+        scene_discription = turn + enemy_display + hp + scene_discription
         chosen_option = terminal_menu(["Ану давай!"], f"{scene_discription}")
         chosen_option = enemy_action_choice
         
     elif target == enemy_obj:
+        turn = f"Хід: ваш.\n"
+        hp = f"\nВаше HP: {player_obj.hp}\n"
         scene_discription = f"Йди сюди вонючий {enemy_obj.type}."
+        enemy_display = f"Перед вами: \n{enemy_obj}"
+        scene_discription = turn + enemy_display + hp + scene_discription
         chosen_option = terminal_menu(scene_actions, f"{scene_discription}")
 
     if chosen_option == "Вдарити":
