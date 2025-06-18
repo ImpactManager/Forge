@@ -68,7 +68,16 @@ def scene(player_obj, enemy_obj, target) -> str:
 
         Відмальовуємо пункти керування
     """
-    scene_actions = ["Вдарити", "Побігти"]
+
+    scene_actions = ["Вдарити", "Захиститися", "Побігти"]
+
+    # Якщо першим ходить ворог, він не може втекти
+    if target == player_obj:
+        # Залишаємо тільки "Вдарити"
+        scene_actions = scene_actions[0]
+    else:
+        scene_actions = scene_actions
+
     enemy_action_choice = choice(scene_actions)
 
     if target == player_obj:
@@ -89,6 +98,8 @@ def scene(player_obj, enemy_obj, target) -> str:
         chosen_option = terminal_menu(scene_actions, f"{scene_discription}")
 
     if chosen_option == "Вдарити":
+        return chosen_option
+    elif chosen_option == "Захиститися":
         return chosen_option
     elif chosen_option == "Побігти":
         return chosen_option
