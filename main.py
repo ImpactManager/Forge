@@ -4,6 +4,14 @@ import sys
 import characters
 import actions
 from random import choice
+from os import system
+
+def resize_windows_terminal(cols, lines):
+    """Змінює розмір вікна терміналу для Windows."""
+    command = f"mode con: cols={cols} lines={lines}"
+    system(command)
+
+resize_windows_terminal(220, 120)    
 
 # Запускаємо перевірку пункта меню, який обрав юзер
 def game_processor() -> None:
