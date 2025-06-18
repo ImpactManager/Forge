@@ -23,14 +23,21 @@ def game_processor() -> None:
 
         # Хто кого б'є першим
         current_fighter = choice(battle_members)
-        
+
+        # Якщо кимось з учасників був застосований блок
+        player_defense_state = False
+        enemy_defense_state = False
+
         while player.hp > 0 and enemy.hp > 0:
 
             # Якщо перший б'є плеер
             if current_fighter == player:
                 scene_action = gui.scene(player, enemy, enemy)
                 if scene_action == "Вдарити":
-                    actions.attack(player, enemy)
+                    actions.attack(player, enemy, enemy_defense_state)
+                    enemy_defense_state = False
+                elif scene_action == "Захиститися": 
+                    player_defense_state = True
                 elif scene_action == "Побігти":  
                     print("Побіг ппц") 
                     break 
@@ -41,7 +48,10 @@ def game_processor() -> None:
             elif current_fighter == enemy:
                 scene_action = gui.scene(player, enemy, player)
                 if scene_action == "Вдарити":
-                    actions.attack(enemy, player)
+                    actions.attack(enemy, player, player_defense_state)
+                    player_defense_state = False
+                elif scene_action == "Захиститися": 
+                    enemy_defense_state = True    
                 elif scene_action == "Побігти":  
                     print("Побіг ппц")        
                     break 
