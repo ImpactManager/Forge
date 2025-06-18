@@ -4,6 +4,7 @@ import readchar
 import os
 from random import choice
 from characters import Enemy
+from time import sleep
 
 def clear_screen() -> None:
     """Очищує екран терміналу."""
@@ -84,7 +85,7 @@ def scene(player_obj, enemy_obj, target) -> str:
         scene_actions = scene_actions
 
     enemy_action_choice = choice(scene_actions)
-
+    
     if target == player_obj:
         turn = f"Хід: ворога.\n"
         hp = f"\nВаше HP: {player_obj.hp}\n"
@@ -92,7 +93,7 @@ def scene(player_obj, enemy_obj, target) -> str:
         enemy_display = f"Перед вами: \n{enemy_obj}"
         scene_discription = turn + enemy_display + hp + scene_discription
         chosen_option = terminal_menu(["Ану давай!"], f"{scene_discription}")
-        chosen_option = enemy_action_choice
+        return("Вдарити")
 
     elif target == enemy_obj:
         turn = f"Хід: ваш.\n"

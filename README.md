@@ -3,9 +3,7 @@
 ## Structure
 
 **main.py** - main file.
-**enemies.py** - enemies classes.
-**player_classes.py** - contains players calsses.
-**npc.py** - npc classes.
+**characters.py** - contains players calsses.
 **gui.py** - draw gui.
 **maps.py** - contains all information about the map.
 **./images** - contains visualization logic.
