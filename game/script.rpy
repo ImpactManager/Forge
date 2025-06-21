@@ -9,7 +9,7 @@ define e = Character("Гоблін") # Приклад визначення пе�
 define mc = Character("Ви") # Визначимо головного героя
 
 label start:
-
+    play audio "dead-melodies-the-sacred-scroll.mp3"
     scene bg bg_Junkyard_AutoHaven # Змінимо фон на кімнату, що є в прикладі
     with fade # Зробимо плавний перехід
 
