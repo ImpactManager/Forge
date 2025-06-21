@@ -14,7 +14,7 @@ label start:
     with fade # Зробимо плавний перехід
 
     #NOTE:трошки попрацював над экраном батлу -fen
-    #jump battle
+    jump battle
 
     "Привіт, світе! Це моя перша візуальна новела." # Простий рядок тексту від оповідача
     show goblin rage at truecenter
