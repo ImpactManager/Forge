@@ -1,52 +1,52 @@
-2025-06-21 16:38:59 UTC
-Windows-10-10.0.26100
+2025-06-21 16:54:50 UTC
+Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
-Early init took 0.07s
-Loading error handling took 0.02s
-Loading script took 0.15s
+Early init took 0.09s
+Loading error handling took 0.05s
+Loading script took 0.84s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.04s
+Running init code took 0.08s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\fenex\\AppData\\Roaming/RenPy/backups\\Forge':
-Dump and make backups took 0.04s
+Backing up script files to 'C:\\Users\\Misha\\AppData\\Roaming/RenPy/backups\\Forge':
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.03s
-DPI scale factor: 1.250000
+DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.29s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.21s
+Interface start took 0.38s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1440)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'ATI Technologies Inc.'"
-Renderer: b'AMD Radeon RX 6750 XT'
-Version: b'4.6.0 Compatibility Profile Context 25.6.1.250522'
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 572.70'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(2560, 1440) drawable=(2560, 1440)
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.02s
+Load screen analysis took 0.03s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
