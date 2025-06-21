@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 64: expected 'word' not found.
+    style.menu_window.xalign = 0.1
+         ^
+
+File "game/script.rpy", line 65: expected 'word' not found.
+    style.menu_window.yalign = 0.7
+         ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Sat Jun 21 19:31:39 2025

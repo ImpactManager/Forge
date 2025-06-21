@@ -13,6 +13,9 @@ label start:
     scene bg bg_Junkyard_AutoHaven # Змінимо фон на кімнату, що є в прикладі
     with fade # Зробимо плавний перехід
 
+    #NOTE:трошки попрацював над экраном батлу -fen
+    #jump battle
+
     "Привіт, світе! Це моя перша візуальна новела." # Простий рядок тексту від оповідача
     show goblin rage at truecenter
 
