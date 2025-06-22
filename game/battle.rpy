@@ -10,6 +10,48 @@
 #             return
 #         "Побіг":
 #             return
+
+label battle:
+    
+    # show screen simple_stats_screen
+    show screen enemy_info
+    show screen player_info
+
+
+    while (player.hp > 0) and (enemy.hp > 0):
+
+        # Якщо обрано "Захист"    
+        $ player_is_defence = False
+        $ enemy_is_defence = False
+
+        menu:
+            "Влупити!":
+                $ enemy.hp -= player.attack
+                "Нанесено шкоди [player.attack]"
+
+            "Захиститися":
+                "[player.name] стає в захист"    
+                $ player_is_defence = True
+
+        # Перевіряємо, чи обрано "Захист" 
+        if player_is_defence is True:
+            $ player.hp -= enemy.attack*0
+            $ player_is_defence = False
+        else:
+            $ player.hp -= enemy.attack
+            "[enemy.say_something()] (наносить - [enemy.attack]шкоди)"
+        
+    hide screen simple_stats_screen
+    
+    if enemy.hp <= 0:
+        if player.hp <= 0:
+            "Ніііііііііііі, я ще повернуся!"
+            
+        else:
+            "Єєєєєєє я виграв"
+            
+    else:
+        "[enemy.type]Ну так шо)"
     
 
 screen enemy_info():
@@ -53,46 +95,4 @@ screen player_info():
                 spacing 10
                 text "Імя: [player.name]"
                 text "HP: [player.hp]"
-                text "Сила: [player.attack]"
-            
-
-# screen simple_stats_screen:
-#     frame:
-#         xalign 0.01 yalign 0.05
-#         vbox:
-#             text "[player.name]" size 22 xalign 0.5
-#             null height 5
-#             hbox:
-#                 bar:
-#                     xmaximum 130
-#                     value red_hood_hp
-#                     range red_hood_max_hp
-#                     left_gutter 0
-#                     right_gutter 0
-#                     thumb None
-#                     thumb_shadow None
-                    
-#                 null width 5
-                
-#                 text "[red_hood_hp] / [red_hood_max_hp]" size 16
-                
-                
-#     frame:
-#         xalign 0.99 yalign 0.05
-#         vbox:
-#             text "[enemy.type]" size 22 xalign 0.5
-#             null height 5
-#             hbox:
-#                 bar:
-#                     xmaximum 130
-#                     value wolf_hp
-#                     range wolf_max_hp
-#                     left_gutter 0
-#                     right_gutter 0
-#                     thumb None
-#                     thumb_shadow None
-                    
-#                 null width 5
-                
-#                 text "[wolf_hp] / [wolf_max_hp]" size 16
-                
+                text "Сила: [player.attack]"      
