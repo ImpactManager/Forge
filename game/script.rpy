@@ -10,6 +10,9 @@ label start:
     $ player = Player(name="Джо", hp=100, attack=25, main_class="Воїн")
     $ enemy = Enemy(hp = 100, attack = 25, type = "Гоблін")
 
+    $ player_speaker = Character(player.name)
+    $ enemy_speaker = Character(enemy.type)
+
     # Музика
     play audio "dead-melodies-the-sacred-scroll.mp3"
     scene bg bg_Junkyard_AutoHaven # Змінимо фон на кімнату, що є в прикладі
@@ -18,17 +21,17 @@ label start:
     "Привіт, світе! Це моя перша візуальна новела." # Простий рядок тексту від оповідача
     show goblin rage at truecenter
 
-    e "Чого прийшов?!" # Діалог від персонажа "Ейлін"
+    enemy_speaker "Чого прийшов?!" # Діалог від персонажа "Ейлін"
 
     hide goblin rage
     show player at truecenter
 
-    pl "Та от сам думаю." # Діалог від головного героя
+    player_speaker "Та от сам думаю." # Діалог від головного героя
 
     hide player at center
     show goblin rage at truecenter
 
-    e "Що ти хочеш зробити далі?"
+    enemy_speaker "Що ти хочеш зробити далі?"
     hide goblin rage
     menu: # Створимо простий вибір
         "Напасти на тебе.":
@@ -38,12 +41,12 @@ label start:
         "Вже йду.":
             scene bg bg_Junkyard_AutoHaven
             show goblin happy at truecenter
-            e "Бувай! І не повертайся."
+            enemy_speaker "Бувай! І не повертайся."
             jump end_game # Перейдемо до кінця гри
 
     scene bg bg_Junkyard_AutoHaven
     show goblin happy at truecenter
-    e "Ось так от"
+    enemy_speaker "Ось так от"
 
     hide goblin # Приховати персонажа
 
