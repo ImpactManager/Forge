@@ -61,19 +61,22 @@ screen enemy_info():
         yalign 0.0  
 
         xsize 400
-        ysize 220
+        ysize 224
         
-        background "#0008"
+        background "#725b55"
         #Горизонтально розміщення
-        hbox:
-            spacing 20
-            #Вертикальне розміщення
-            vbox:
-                spacing 10
-                text "[enemy.type]"
-                text "[enemy.hp]"
-                text "[enemy.attack]"
-            add "goblin.png" size (200, 200)    
+        frame:
+            background "#182037"
+            hbox:
+                spacing 65
+                #Вертикальне розміщення
+                vbox:
+                    spacing 10
+                    text "[enemy.type]" font "fonts/a_AlgeriusRough.ttf" size 24 color "#FFFFFF"
+                    text "ЗД: [enemy.hp]" font "fonts/a_AlgeriusRough.ttf" size 24 color "#FFFFFF"
+                    text "АТ: [enemy.attack]" font "fonts/a_AlgeriusRough.ttf" size 24 color "#FFFFFF"
+                add "goblin.png" size (200, 200)  
+     
 
 
 screen player_info():
