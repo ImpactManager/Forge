@@ -10,6 +10,7 @@ label start:
     $ player = Player(name="Джо", hp=100, attack=25, main_class="Воїн")
     $ enemy = Enemy(hp = 100, attack = 25, type = "Гоблін")
 
+    # Музика
     play audio "dead-melodies-the-sacred-scroll.mp3"
     scene bg bg_Junkyard_AutoHaven # Змінимо фон на кімнату, що є в прикладі
     with fade # Зробимо плавний перехід
@@ -42,7 +43,7 @@ label start:
 
     scene bg bg_Junkyard_AutoHaven
     show goblin happy at truecenter
-    e "Ось так ти можеш взаємодіяти з грою."
+    e "Ось так от"
 
     hide goblin # Приховати персонажа
 
