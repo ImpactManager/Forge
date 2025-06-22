@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 64: expected 'word' not found.
-    style.menu_window.xalign = 0.1
-         ^
-
-File "game/script.rpy", line 65: expected 'word' not found.
-    style.menu_window.yalign = 0.7
+File "game/battle.rpy", line 22: keyword argument 'xsize' appears more than once in a frame statement.
+    xsize 200
          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jun 21 19:31:39 2025
+Sun Jun 22 16:08:05 2025
