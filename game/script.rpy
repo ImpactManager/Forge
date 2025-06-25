@@ -17,6 +17,7 @@ label start:
     play audio "dead-melodies-the-sacred-scroll.mp3"
     scene bg bg_Junkyard_AutoHaven # Змінимо фон на кімнату, що є в прикладі
     with fade # Зробимо плавний перехід
+    jump lobby
     jump battle
 
     "Привіт, світе! Це моя перша візуальна новела." # Простий рядок тексту від оповідача
